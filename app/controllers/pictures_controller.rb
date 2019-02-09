@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   def index
+    @photo_list = Photo.all
     render("pic_templates/all_photos.html.erb")
   end
   def new_form
