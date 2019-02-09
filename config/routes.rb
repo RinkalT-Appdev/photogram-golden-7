@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   
-  get("/photos/new", {:controller => "pictures", :action =>""})
-  get("/create_photo", {:controller =>"pictures", :action => ""})
+  
   get("/photos", {:controller => "pictures", :action => "index"})
-  get("/photos/2431/edit", {:controller => "pictures", :action => ""})
-  
-  
-  
+  get("/photos/new", {:controller => "pictures", :action =>"new_form"})
+  get("/create_photo", {:controller =>"pictures", :action => "create_row"})
+  get("/photos/:an_id_number", {:controller => "pictures", :action => "show_details"})
+  get("/photos/:some_id_number/edit", {:controller =>"pictures", :action => "edit_form"})
+  get("/update_photo/:the_id_number", {:controller =>"pictures", :action => "update_row"})
+  get("/delete_photo/:bye_id_number", {:controller =>"pictures", :action => "destroy_row"})
+   
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
