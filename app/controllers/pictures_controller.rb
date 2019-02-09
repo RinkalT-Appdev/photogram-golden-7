@@ -10,6 +10,9 @@ class PicturesController < ApplicationController
     render("pic_templates/create_row.html.erb")
   end
   def show_details
+    the_id = params.fetch("an_id_number")
+    @the_photo = Photo.find(the_id)
+    
     render("pic_templates/show_details.html.erb")
   end
   def edit_form

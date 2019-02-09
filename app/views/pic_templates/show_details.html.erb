@@ -1,1 +1,20 @@
-<h1> Show photo details </h1>
+<h1> Photo Details </h1>
+<p><%= @the_photo.caption %></p>
+
+<img src="<%= @the_photo.source %>"
+
+<nav>
+  <ul>
+    <li><a href="/photos">
+      Go back
+    </a></li>
+
+    <li><a href="/photos/:some_id_number/edit">
+      Edit
+    </a></li>
+
+    <li><a href="/delete_photo/:bye_id_number">
+      Delete
+    </a></li>
+  </ul>
+</nav>
